@@ -1,0 +1,938 @@
+$primary: #FBEC13;
+$secondary: #DF3D29;
+$dark: #181A20;
+$grey: #797979;
+$light: #F8F6F0;
+$link: #496DDB;
+$success: #2BC016;
+%montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+%montserrat-i {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+%montserrat-m {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+%montserrat-mi {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
+%montserrat-b {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+%montserrat-bi {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+%rubik {
+  font-family: 'Rubik', sans-serif;
+}
+%rubik-i {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+}
+%rubik-b {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+%rubik-bi {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+@keyframes swipe {
+  0%, 30% {
+    scale: 0.8;
+    translate: 0 -2px;
+  }
+  15% {
+    scale: 1.2;
+    translate: 0;
+    opacity: 1;
+  }
+  to {
+    scale: 0.5 2.5;
+    translate: 0 20px;
+    opacity: 0.1
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 1px;
+}
+
+::-moz-selection {
+  background: $secondary;
+  text-shadow: none
+}
+
+::selection {
+  background: $secondary;
+  text-shadow: none
+}
+
+body {
+  background-color: $dark;
+  background-image: url('../bg/architect.svg');
+  color: $light;
+  font-size: 16rem;
+  min-width: 300px;
+  overflow-x: hidden;
+}
+
+* + section {
+  margin-top: 4em;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0
+}
+
+textarea {
+  resize: vertical
+}
+
+.social {
+  &__list {
+    max-width: 150px;
+    position: relative;
+  }
+
+  &__inst {
+    background: transparent url('../bg/inst.svg') no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__yt {
+    background: transparent url('../bg/yt.svg') no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__tg {
+    background: transparent url('../bg/tg.svg') no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__in {
+    background: transparent url('../bg/in.svg') no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__git {
+    background: transparent url('../bg/git.svg') no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.header {
+  &__wrapper {
+    min-height: 100dvh;
+    background: url('../bg/background.jpg') no-repeat center;
+    background-image: image-set(
+      url('../bg/background.webp') type('image/webp') 1x,
+      url('../bg/background@2x.webp') type('image/webp') 2x,
+      url('../bg/background.jpg') type('image/jpg') 1x,
+      url('../bg/background@2x.jpg') type('image/jpg') 2x
+    );
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%,0 0);
+    overflow: hidden;
+  }
+  &__top {
+    background: rgba($dark, 0.8);
+    border-bottom: 2px $grey ridge;
+    height: 85px;
+    width: 100%;
+  }
+  &__inner {
+    align-items: center;
+    padding-top: 1em;
+  }
+  &__lang {
+    @extend %montserrat;
+    position: relative;
+    height: 25px;
+    width: 80px;
+    select {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      color: $primary;
+      cursor: pointer;
+      font-size: 16rem;
+      height: auto;
+      padding-left: 20px;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    select:focus {
+      outline: 0.1em dotted $grey;
+    }
+    option {
+      background: $dark;
+      font-size: 12rem;
+    }
+    &::before {
+      content: "";
+      background: url('../bg/globe.svg') no-repeat center;
+      background-size: 100%;
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      top: 60%;
+      translate: 0 -50%;
+      pointer-events: none;
+    }
+    &::after {
+      content: "";
+      background: url('../bg/chevron-down.svg') no-repeat center;
+      background-size: 100%;
+      height: 12px;
+      width: 12px;
+      position: absolute;
+      top: 60%;
+      right: 5%;
+      translate: 0 -50%;
+      pointer-events: none;
+    }
+  }
+  &__logo {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    img {
+      height: 50px;
+    }
+    img:hover,
+    img:focus {
+      scale: 1.2;
+      transition: scale 0.5s ease-in-out;
+    }
+  }
+  &__menu {
+    margin-left: 75%;
+    position: relative;
+    user-select: none;
+  }
+  &__burger {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    input {
+      position: absolute;
+      height: inherit;
+      width: inherit;
+      opacity: 0;
+      z-index: 999;
+      -webkit-touch-callout: none;
+    }
+    span {
+      position: relative;
+      display: block;
+      background: $primary;
+      border-radius: 4px;
+      height: 2px;
+      margin-bottom: 6px;
+      width: 100%;
+      z-index: 99;
+    }
+    span:first-of-type {
+      transform-origin: 85% 0;
+    }
+    span:nth-last-child(2) {
+      transform-origin: 85% 0;
+    }
+    input:checked ~ span {
+      width: 30px;
+    }
+    input:checked ~ span:first-of-type {
+      rotate: -45deg;
+      translate: -1px 1px;
+      transition: rotate 0.5s ease-in-out;
+    }
+    input:checked ~ span:nth-last-child(2) {
+      rotate: 45deg;
+      transition: rotate 0.5s ease-in-out;
+    }
+    input:checked ~ span:nth-last-child(3) {
+      rotate: 0deg;
+      visibility: hidden;
+    }
+    input:checked ~ ul {
+      translate: -85% 0;
+      opacity: 1;
+    }
+  }
+  &__menu-list {
+    background: rgba($dark, 0.8);
+    position: absolute;
+    top: -120%;
+    left: 220%;
+    list-style: none;
+    height: 100vh;
+    min-width: 50vw;
+    padding: 7em 0 0 2em;
+    opacity: 0;
+    translate: none;
+    transition: translate 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 9;
+    a {
+      @extend %montserrat;
+      color: $primary;
+    }
+    a::before {
+      content: "";
+      background: linear-gradient(30deg, $primary, $secondary);
+      position: absolute;
+      top: 110%;
+      height: 1px;
+      width: 0;
+      transition: width 0.3s ease-in-out;
+    }
+    a:hover::before {
+      width: 100%;
+    }
+    li + li {
+      padding-top: 1em;
+    }
+    li:last-of-type {
+      margin-top: 25em;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    background: rgba($dark, 0.4);
+    height: calc(100vh - 85px);
+  }
+  &__outer {
+    flex-direction: column;
+    align-items: center;
+  }
+  &__btn {
+    @extend %montserrat-m;
+    border-radius: 2em;
+    box-shadow: 0 2px 8px rgba($secondary, 0.8);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  &__scroller {
+    background: transparent;
+    border: 2px solid $primary;
+    border-radius: 2em;
+    box-shadow: 0 2px 8px rgba($primary, 0.7);
+    height: 50px;
+    margin-top: calc(20vh - 72px);
+    width: 30px;
+    a {
+      animation: swipe 1.2s -1s infinite ease-in-out;
+      background: $primary;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba($primary, 0.7);
+      display: block;
+      height: 10px;
+      margin: 0.5em auto;
+      width: 10px;
+    }
+  }
+}
+
+.service {
+  &__title {
+    @extend %rubik-b;
+    font-size: 34rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    @extend %montserrat;
+    font-size: 12rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  &__tiles {
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+    padding-top: 2em;
+    overflow-x: auto;
+    .flex-grid__col:last-of-type .service__image::before {
+        translate: 4% 0;
+        transition: translate 0.5s ease-in-out;
+    }
+    .flex-grid__col:last-of-type .service__image:hover::before {
+        translate: -4% 0;
+    }
+  }
+  &__block {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    max-width: 300px;
+  }
+  &__image {
+    margin: 0;
+    padding-bottom: 0;
+    position: relative;
+    img {
+      max-height: 165px;
+    }
+    &::before {
+      content: '';
+      background-color: #505050;
+      border-radius: 50%;
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: -9;
+      transition: translate 0.5s ease-in-out;
+    }
+    &:hover::before {
+      translate: -4% 0;
+    }
+  }
+  &__name {
+    @extend %montserrat-m;
+    font-size: 26rem;
+    margin: 0;
+    max-height: 100px;
+    overflow-y: auto;
+    text-align: center;
+  }
+  &__descript {
+    @extend %montserrat;
+    line-height: 1.5;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+  &__btn {
+    @extend %montserrat-m;
+    box-shadow: 0 2px 8px rgba($primary, 0.8);
+    text-transform: uppercase;
+  }
+}
+
+.howto {
+  &__block {
+    flex-direction: column;
+    margin-bottom: 2em;
+    &:nth-child(odd) {
+      .howto__image {
+        img {
+          clip-path: polygon(0 0, 100% 5%, 100% 50%, 100% 100%, 0 95%, 0% 50%);
+        }
+      }
+    }
+    &:nth-child(even) {
+      .howto__image {
+        img {
+          clip-path: polygon(0 5%, 100% 0, 100% 50%, 100% 95%, 0 100%, 0% 50%);
+        }
+      }
+    }
+  }
+  &__image {
+    padding: 0;
+  }
+  &__title {
+    @extend %rubik;
+    font-size: 26rem;
+    margin-bottom: 3em;
+    max-height: 100px;
+    overflow-y: auto;
+    text-align: center;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      line-height: 20%;
+      height: 15px;
+      width: 130px;
+      background: rgba($secondary, 0.8);
+      transform: skew(-20deg);
+      z-index: -1;
+    }
+  }
+  &__list {
+    list-style: none;
+    position: relative;
+    text-align: center;
+    li {
+      @extend %montserrat;
+      text-wrap: balance;
+      line-height: 1.5;
+      margin: auto;
+      max-height: 75px;
+      max-width: 350px;
+      overflow-y: auto;
+    }
+    li::before {
+      content: "";
+      @extend %montserrat-b;
+      background-color: rgba($light, 0.1);
+      border-radius: 50%;
+      color: rgba($light, 0.3);
+      line-height: 100%;
+      font-size: 96rem;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      translate: -50% 0;
+      width: 100px;
+    }
+    li:nth-child(1):before {
+      content: "1";
+      top: -15%;
+    }
+    li:nth-child(2):before {
+      content: "2";
+      top: 30%;
+    }
+    li:nth-child(3):before {
+      content: "3";
+      top: 75%;
+    }
+    li + li {
+      margin-top: 4em;
+    }
+  }
+  &__btn {
+    @extend %montserrat-m;
+    box-shadow: 0 2px 8px rgba($primary, 0.8);
+    position: relative;
+    left: 50%;
+    margin-top: 2em;
+    translate: -50% 0;
+    text-transform: uppercase;
+  }
+}
+
+.portfolio {
+  &__title {
+    @extend %rubik-b;
+    font-size: 34rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    @extend %montserrat;
+    font-size: 12rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  &__accordion {
+    position: relative;
+    margin: 2em auto;
+  }
+  &__baffle {
+    height: 50px;
+    margin-left: 0 !important;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    label {
+      @extend %montserrat;
+      border: 1px solid $light;
+      border-radius: 4px;
+      font-weight: 400;
+      display: block;
+      padding: 0.75em 1em;
+      position: relative;
+      user-select: none;
+      &::after {
+        content: '';
+        background: url('../bg/chevron-down-light.svg') no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        display: block;
+        height: 8px;
+        width: 16px;
+        position: absolute;
+        left: 90%;
+        top: 40%;
+      }
+    }
+  }
+  &__accordion input[type="radio"]:checked + &__baffle {
+    height: 300px;
+  }
+  &__accordion input[type="radio"]:checked + &__baffle label::after {
+    rotate: 180deg;
+  }
+  &__content {
+    border-bottom: 1px solid $light;
+    border-left: 1px solid $light;
+    border-right: 1px solid $light;
+    min-height: 250px;
+    overflow-y: auto;
+    padding-top: 10%;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+  }
+  &__slider {
+    .swiper-pagination-bullet {
+      background-color: $light;
+      font-size: 14rem;
+      height: 8px;
+      width: 8px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+      background-color: rgba($dark, 0.5);
+      border-radius: 50%;
+      padding: 1em 1.5em;
+      top: 55%;
+      translate: 0 -100%;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      color: $light;
+      font-size: 24rem;
+    }
+  }
+  &__link {
+    img {
+      border-radius: 4px;
+      box-shadow: 0 2px 8px $grey;
+      display: block;
+      max-height: 100%;
+      width: 100%;
+    }
+    figcaption {
+      @extend %montserrat;
+      color: $light;
+      font-size: 12rem;
+      font-style: normal;
+      letter-spacing: 0.1em;
+      max-width: 400px;
+      padding-top: 0.5em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.team {
+  &__title {
+    @extend %rubik-b;
+    font-size: 34rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    @extend %montserrat;
+    font-size: 12rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  &__wrapper {
+    margin: auto;
+    padding-top: 1.5em;
+  }
+  &__cards {
+    flex-direction: column;
+    gap: 2em;
+  }
+  &__card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+    background-color: rgba($light, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 5px $grey;
+    min-height: 520px;
+    padding: 0.25em;
+  }
+  &__photo {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 60%;
+    position: relative;
+    &:hover .team__info {
+      display: block;
+    }
+    &:hover img {
+      filter: blur(4px);
+    }
+    img {
+      border-radius: 8px;
+      min-height: 330px;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    background-color: rgba($dark, 0.5);
+    border-radius: 8px;
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding: 20% 1em;
+    position: absolute;
+    inset: 0;
+    z-index: 99;
+    p {
+      @extend %montserrat;
+      color: $primary;
+      font-size: 14rem;
+      font-style: normal;
+      line-height: 1.5;
+      max-height: 100px;
+      overflow-y: auto;
+      text-wrap: balance;
+    }
+    hr {
+      background-color: $primary;
+      height: 1px;
+      margin: 30% auto;
+      width: 50%;
+    }
+    .social__list {
+      margin: auto;
+    }
+  }
+  &__inner {
+    position: relative;
+    &::before {
+      content: "";
+      background: url('../bg/quote.svg') no-repeat center;
+      display: block;
+      height: 83px;
+      width: 109px;
+      position: absolute;
+      left: 0;
+      top: -20%;
+      opacity: 0.3;
+      z-index: -1;
+    }
+  }
+  &__name {
+    @extend %montserrat;
+    font-size: 26rem;
+    margin-bottom: 0;
+  }
+  &__role {
+    @extend %montserrat-b;
+    font-size: 14rem;
+    letter-spacing: 0.1em;
+    &::before, &::after {
+      content: "\2015";
+      padding: 0 0.5em;
+    }
+  }
+  &__btn {
+    @extend %montserrat-m;
+    box-shadow: 0 2px 8px rgba(251, 236, 19, 0.8);
+    display: block;
+    margin-bottom: 1.5em !important;
+    text-transform: uppercase;
+  }
+}
+
+.contacts {
+  &__title {
+    @extend %rubik-b;
+    font-size: 34rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    @extend %montserrat;
+    font-size: 12rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  &__wrapper {
+    margin: auto;
+    padding-top: 1.5em;
+  }
+  &__inner {
+    flex-direction: column;
+    gap: 3em;
+  }
+  &__form {
+    background-color: #07080A;
+    border-radius: 8px;
+    padding: 3em 2em 2em 2em;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      min-height: 500px;
+      margin-bottom: 0;
+    }
+    label {
+      @extend %montserrat;
+      font-weight: 400;
+      letter-spacing: 1.4px;
+      width: 100%;
+    }
+    input[type="text"],
+    input[type="email"], 
+    textarea {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px ridge $light;
+      border-radius: 0;
+      color: $light;
+      margin-top: 1em;
+      padding: 0.5em 0;
+      width: 100%;
+    }
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder, 
+    textarea::placeholder {
+      color: $grey
+    }
+    input:required:not(:placeholder-shown):invalid {
+      border-color: $secondary;
+    }
+    input:required:valid {
+      border-color: $success
+    }
+  }
+  &__sender {
+    @extend %montserrat-m;
+    font-size: 14rem;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  &__caption {
+    @extend %rubik;
+    font-size: 26rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  &__summary {
+    @extend %montserrat;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: balance;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  &__list {
+    list-style: none;
+    position: relative;
+    text-align: center;
+    li + li {
+      padding-top: 2em;
+    }
+    li::before {
+      content: "";
+      background: $grey no-repeat center;
+      border-radius: 50%;
+      display: block;
+      height: 50px;
+      width: 50px;
+      margin: 1em auto;
+    }
+    li:nth-child(1)::before {
+      background-image: url('../bg/map.svg');
+    }
+    li:nth-child(2)::before {
+      background-image: url('../bg/tel.svg');
+    }
+    li:nth-child(3)::before {
+      background-image: url('../bg/email.svg');
+    }
+  }
+  &__link {
+    @extend %montserrat-m;
+    color: $light;
+    margin: auto;
+  }
+  &__art {
+    position: relative;
+    height: 350px;
+    width: 400px;
+    margin: auto;
+    left: -10%;
+  }
+}
+
+.footer {
+  background: #07080A;
+  &__inner {
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;
+    min-height: 300px;
+    padding-top: 2.5em;
+  }
+  &__logo {
+    margin: 0;
+    padding: 0;
+    img {
+      height: 50px;
+    }
+    img:hover,
+    img:focus {
+      scale: 1.2;
+      transition: scale 0.5s ease-in-out;
+    }
+  }
+  &__media {
+    .social__list {
+      gap: 1.5em;
+    }
+  }
+  &__content {
+    @extend %montserrat;
+    font-size: 14rem;
+    color: $primary;
+  }
+}

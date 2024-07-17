@@ -1,0 +1,448 @@
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  * + section {
+    margin-top: 5em;
+  }
+  .header__menu-list {
+    min-width: 40vw;
+    padding: 8em 0 0 4em;
+  }
+  .header__menu-list li + li {
+    padding-top: 2em;
+  }
+  .header__menu-list li:last-of-type {
+    margin-top: 25em;
+  }
+  .service__title {
+    font-size: 40rem;
+    margin-bottom: 0.75em;
+  }
+  .service__subtitle {
+    font-size: 14rem;
+  }
+  .service__block {
+    gap: 2em;
+    max-width: 350px;
+  }
+  .service__image img {
+    max-height: 200px;
+  }
+  .service__name {
+    font-size: 28rem;
+  }
+  .howto__block {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+  .howto__block:nth-child(1) .howto__image img {
+    -webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+  }
+  .howto__block:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+  .howto__block:nth-child(2) .howto__image img {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+  }
+  .howto__block:nth-child(3) .howto__image img {
+    -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  }
+  .howto__image {
+    margin: 0;
+  }
+  .howto__image picture {
+    display: block;
+    height: 100%;
+  }
+  .howto__image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .howto__title {
+    font-size: 28rem;
+    margin-bottom: 4em;
+    margin-top: 2em;
+  }
+  .howto__title span {
+    width: 140px;
+  }
+  .howto__list li + li {
+    margin-top: 5em;
+  }
+  .howto__btn {
+    margin-top: 3em;
+    margin-bottom: 5em;
+  }
+  .portfolio__title {
+    font-size: 40rem;
+    margin-bottom: 0.75em;
+  }
+  .portfolio__subtitle {
+    font-size: 14rem;
+  }
+  .portfolio__accordion {
+    display: flex;
+    max-width: 600px;
+    min-height: 400px;
+    margin: 3em auto;
+    justify-content: center;
+  }
+  .portfolio__accordion input[type=radio]:checked + .portfolio__baffle {
+    position: static;
+  }
+  .portfolio__accordion input[type=radio]:checked + .portfolio__baffle > .portfolio__content {
+    left: 50%;
+    translate: -50%;
+    width: 100%;
+  }
+  .portfolio__baffle {
+    height: 55px;
+    transition: none;
+  }
+  .portfolio__baffle label {
+    padding: 1em 1.5em;
+  }
+  .portfolio__baffle label::after {
+    background: none;
+  }
+  .portfolio__baffle label[for=option-1] {
+    border-width: 2px;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+  }
+  .portfolio__baffle label[for=option-2] {
+    border-width: 2px;
+    border-radius: 0;
+  }
+  .portfolio__baffle label[for=option-3] {
+    border-width: 2px;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+  }
+  .portfolio__slider .swiper-pagination {
+    bottom: 0;
+  }
+  .portfolio__content {
+    border: none;
+    min-height: 300px;
+    padding-top: 8%;
+  }
+  .portfolio__link figcaption {
+    font-size: 14rem;
+    padding-top: 1em;
+  }
+  .team__title {
+    font-size: 40rem;
+    margin-bottom: 0.75em;
+  }
+  .team__subtitle {
+    font-size: 14rem;
+  }
+  .team__wrapper {
+    padding-top: 2em;
+    max-width: 600px;
+  }
+  .team__cards {
+    flex-direction: row;
+  }
+  .team__card {
+    gap: 2em;
+    min-height: 560px;
+  }
+  .team__photo img {
+    min-height: 400px;
+  }
+  .team__info {
+    padding: 25% 0.5em;
+  }
+  .team__info p {
+    font-size: 14rem;
+  }
+  .team__info hr {
+    margin: 25% auto;
+  }
+  .team__inner::before {
+    left: 10%;
+  }
+  .team__name {
+    font-size: 28rem;
+  }
+  .team__role {
+    font-size: 16rem;
+  }
+  .team__btn {
+    margin-bottom: 2em !important;
+  }
+  .contacts__title {
+    font-size: 40rem;
+    margin-bottom: 0.75em;
+  }
+  .contacts__subtitle {
+    font-size: 14rem;
+  }
+  .contacts__wrapper {
+    max-width: 600px;
+  }
+  .contacts__inner {
+    gap: 4em;
+  }
+  .contacts__form {
+    padding: 3em 6em;
+  }
+  .contacts__form form {
+    gap: 3em;
+  }
+  .contacts__sender {
+    font-size: 16rem;
+  }
+  .contacts__caption {
+    font-size: 28rem;
+  }
+  .contacts__list li {
+    display: inline-block;
+  }
+  .contacts__list li + li {
+    padding-top: 3em;
+    padding-left: 3em;
+  }
+  .contacts__art {
+    left: 0;
+  }
+  .footer__inner {
+    justify-content: space-between;
+    flex-direction: row;
+    min-height: 150px;
+    padding-top: 1.5em;
+  }
+  .footer__logo {
+    order: 1;
+  }
+  .footer__media {
+    order: 3;
+  }
+  .footer__media .social__list {
+    gap: 1em;
+  }
+  .footer__content {
+    flex-grow: 12 !important;
+    font-size: 16rem;
+    max-height: 25px;
+    order: 2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * + section {
+    margin-top: 6em;
+  }
+  .header__inner .flex-grid__col--sm:nth-child(2) {
+    order: 2;
+  }
+  .header__lang option {
+    font-size: 16rem;
+  }
+  .header__logo {
+    padding-left: 60%;
+  }
+  .header__menu {
+    margin-left: 0;
+  }
+  .header__burger {
+    width: auto;
+  }
+  .header__burger input, .header__burger span {
+    display: none;
+  }
+  .header__menu-list {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    min-width: auto;
+    opacity: 1;
+    padding: 0;
+    position: static;
+    width: 100%;
+  }
+  .header__menu-list li:last-of-type {
+    display: none;
+  }
+  .header__menu-list li + li {
+    padding-top: 0;
+  }
+  .header__menu-item {
+    display: inline-block;
+  }
+  .service__title {
+    font-size: 48rem;
+  }
+  .service__subtitle {
+    font-size: 16rem;
+  }
+  .service__tiles {
+    flex-direction: row;
+    gap: 3em;
+  }
+  .service__block {
+    max-width: 300px;
+  }
+  .service__image img {
+    max-height: 165px;
+  }
+  .service__name {
+    font-size: 30rem;
+    min-height: 75px;
+  }
+  .service__descript {
+    min-height: 150px;
+  }
+  .howto__title {
+    font-size: 30rem;
+    margin-bottom: 5em;
+    margin-top: 3em;
+  }
+  .howto__title span {
+    width: 150px;
+  }
+  .howto__list li + li {
+    margin-top: 6em;
+  }
+  .howto__btn {
+    margin-top: 4em;
+    margin-bottom: 6em;
+  }
+  .portfolio__accordion {
+    margin: 4em auto;
+    max-width: 900px;
+  }
+  .portfolio__title {
+    font-size: 48rem;
+  }
+  .portfolio__subtitle {
+    font-size: 16rem;
+  }
+  .portfolio__baffle {
+    height: 75px;
+  }
+  .portfolio__baffle label {
+    cursor: pointer;
+    font-size: 18rem;
+    padding: 1.25em 2em;
+  }
+  .portfolio__content {
+    min-height: 350px;
+    padding-top: 6%;
+  }
+  .portfolio__slider .swiper-button-prev,
+  .portfolio__slider .swiper-button-next {
+    display: flex;
+  }
+  .portfolio__link figcaption {
+    font-size: 16rem;
+    padding-top: 1.5em;
+  }
+  .team__title {
+    font-size: 48rem;
+  }
+  .team__subtitle {
+    font-size: 16rem;
+  }
+  .team__wrapper {
+    padding-top: 2.5em;
+    max-width: 900px;
+  }
+  .team__cards {
+    gap: 3em;
+  }
+  .team__info {
+    padding: 30% 0.5em;
+  }
+  .team__info p {
+    font-size: 16rem;
+    max-height: 120px;
+  }
+  .team__info hr {
+    margin: 15% auto;
+  }
+  .team__card {
+    gap: 2.5em;
+    min-height: 750px;
+  }
+  .team__photo img {
+    min-height: 510px;
+  }
+  .team__name {
+    font-size: 30rem;
+  }
+  .team__btn {
+    margin-bottom: 2.5em !important;
+  }
+  .contacts__title {
+    font-size: 48rem;
+  }
+  .contacts__subtitle {
+    font-size: 16rem;
+  }
+  .contacts__wrapper {
+    max-width: 900px;
+  }
+  .contacts__inner {
+    flex-direction: row;
+  }
+  .contacts__form {
+    max-height: 700px;
+    padding: 3em 4em;
+    order: 2;
+  }
+  .contacts__form form {
+    gap: 4em;
+  }
+  .contacts__sender {
+    font-size: 16rem;
+  }
+  .contacts__caption {
+    font-size: 30rem;
+    text-align: left;
+  }
+  .contacts__summary {
+    margin-bottom: 4em;
+    text-align: left;
+  }
+  .contacts__list {
+    text-align: left;
+  }
+  .contacts__list li {
+    display: flex;
+  }
+  .contacts__list li + li {
+    padding-top: 2em;
+    padding-left: 0;
+  }
+  .contacts__list li::before {
+    display: inline-block;
+    margin: 0;
+  }
+  .footer__content {
+    flex-grow: 25 !important;
+    text-align: center;
+  }
+}/*# sourceMappingURL=media.min.css.map */

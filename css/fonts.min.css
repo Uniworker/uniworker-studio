@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local("Montserrat-Regular") url("../font/Montserrat-Regular.woff2") format("font/woff2"), url("../font/Montserrat-Regular.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Montserrat-Italic") url("../font/Montserrat-Italic.woff2") format("font/woff2"), url("../font/Montserrat-Italic.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Montserrat-Medium") url("../font/Montserrat-Medium.woff2") format("font/woff2"), url("../font/Montserrat-Medium.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 500;
+  src: local("Montserrat-MediumItalic") url("../font/Montserrat-MediumItalic.woff2") format("font/woff2"), url("../font/Montserrat-MediumItalic.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat-Bold") url("../font/Montserrat-Bold.woff2") format("font/woff2"), url("../font/Montserrat-Bold.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Montserrat-BoldItalic") url("../font/Montserrat-BoldItalic.woff2") format("font/woff2"), url("../font/Montserrat-BoldItalic.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local("Rubik-Regular") url("../font/Rubik-Regular.woff2") format("font/woff2"), url("../font/Rubik-Regular.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: 400;
+  font-display: fallback;
+  src: local("Rubik-Italic") url("../font/Rubik-Italic.woff2") format("font/woff2"), url("../font/Rubik-Italic.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: local("Rubik-Bold") url("../font/Rubik-Bold.woff2") format("font/woff2"), url("../font/Rubik-Bold.woff") format("font/woff");
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: 700;
+  font-display: fallback;
+  src: local("Rubik-Bold") url("../font/Rubik-Bold.woff2") format("font/woff2"), url("../font/Rubik-Bold.woff") format("font/woff");
+}/*# sourceMappingURL=fonts.min.css.map */
