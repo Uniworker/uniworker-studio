@@ -3,7 +3,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.contacts__link, .contacts__sender, .team__btn, .howto__btn, .service__btn, .service__name, .header__btn {
+#top button, .contacts__link, .contacts__sender, .team__btn, .howto__btn, .service__btn, .service__name, .header__btn {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
@@ -822,6 +822,18 @@ textarea {
   color: #F8F6F0;
   margin: auto;
 }
+.contacts__link::before {
+  content: "";
+  background: linear-gradient(30deg, #FBEC13, #DF3D29);
+  position: absolute;
+  top: 110%;
+  height: 1px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+.contacts__link:hover::before {
+  width: 100%;
+}
 .contacts__art {
   position: relative;
   height: 350px;
@@ -858,4 +870,19 @@ textarea {
 .footer__content {
   font-size: 14rem;
   color: #FBEC13;
+}
+
+#top {
+  display: none;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  transition: display 0.5s ease-in-out;
+  z-index: 999;
+}
+#top button {
+  cursor: pointer;
+  font-size: 26rem;
+  line-height: 50%;
+  padding: 0.5em;
 }/*# sourceMappingURL=style.min.css.map */

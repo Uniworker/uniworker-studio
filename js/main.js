@@ -25,13 +25,30 @@ document.addEventListener('DOMContentLoaded', (e) => {
   window.addEventListener('scroll', (e) => {
     if (document.getElementById('menu-opener').checked)
       document.body.style.position = 'fixed'
+    if (window.pageYOffset > document.querySelector('.header').clientHeight) {
+      document.getElementById('top').style.display = 'block'
+    } else {
+      document.getElementById('top').style.display = 'none'
+    }
   });
   document.addEventListener('click', (e) => {
-    if (e.target.id == 'menu-opener') {
+    if (e.target.closest('#menu-opener')) {
       document.body.style.position = ''
     }
     if (e.target.closest('.header__menu-item')) {
       document.getElementById('menu-opener').checked = false
+    }
+    if (e.target.closest('#top')) {
+      window.scrollTo(0, 0)
+    }
+    if (e.target.closest('#easteregg')) {
+      if (e.target.dataset.active === 'true') {
+        e.target.lastElementChild.setAttribute('hidden', '')
+        e.target.dataset.active = false
+      } else if(e.target.dataset.active === 'false') {
+        e.target.lastElementChild.removeAttribute('hidden')
+        e.target.dataset.active = true
+      }
     }
   })
 })

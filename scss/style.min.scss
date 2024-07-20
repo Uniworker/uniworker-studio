@@ -894,6 +894,18 @@ textarea {
     @extend %montserrat-m;
     color: $light;
     margin: auto;
+    &::before {
+        content: "";
+        background: linear-gradient(30deg, $primary, $secondary);
+        position: absolute;
+        top: 110%;
+        height: 1px;
+        width: 0;
+        transition: width 0.3s ease-in-out;
+      }
+      &:hover::before {
+        width: 100%;
+      }
   }
   &__art {
     position: relative;
@@ -934,5 +946,21 @@ textarea {
     @extend %montserrat;
     font-size: 14rem;
     color: $primary;
+  }
+}
+
+#top {
+  display: none;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  transition: display 0.5s ease-in-out;
+  z-index: 999;
+  button {
+    @extend %montserrat-m;
+    cursor: pointer;
+    font-size: 26rem;
+    line-height: 50%;
+    padding: 0.5em;
   }
 }

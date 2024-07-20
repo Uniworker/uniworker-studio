@@ -143,11 +143,11 @@
   transform: rotate(45deg);
 }
 
-.lamp3 {
+.active {
   position: absolute;
-  bottom: 157px;
-  left: 24px;
-  width: 170px;
+  bottom: 150px;
+  left: 50px;
+  width: 150px;
   height: 70px;
   background: #3c6382;
   z-index: -2;
@@ -156,7 +156,6 @@
   background: linear-gradient(to right, #FAD390 0%, transparent 105%);
   opacity: 0.5;
   z-index: -1;
-  display: none;
 }
 
 .lamp4 {

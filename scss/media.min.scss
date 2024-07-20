@@ -287,6 +287,13 @@
     order: 2;
   }
   }
+  #top {
+  bottom: 7.5%;
+  button {
+    font-size: 28rem;
+    padding: 0.75em;
+  }
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -518,6 +525,13 @@
   &__content {
     flex-grow: 25 !important;
     text-align: center;
+  }
+  }
+  #top {
+  bottom: 10%;
+  button {
+    font-size: 30rem;
+    padding: 1em;
   }
   }
 }
