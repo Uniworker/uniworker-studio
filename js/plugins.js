@@ -1,25 +1,4 @@
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-  var method;
-  var noop = function () {};
-  var methods = [
-    'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-    'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-    'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-    'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
-  ];
-  var length = methods.length;
-  var console = (window.console = window.console || {});
-
-  while (length--) {
-    method = methods[length];
-
-    // Only stub undefined methods.
-    if (!console[method]) {
-      console[method] = noop;
-    }
-  }
-}());
+import { video, editing, webdev } from "../js/data.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const slider = new Swiper('.swiper', {
@@ -67,6 +46,98 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerGroup: 3,
         slidesPerView: 3
       }
+    }
+  })
+
+  var modal = new tingle.modal({
+    footer: true,
+    stickyFooter: false,
+    closeMethods: ['button', 'escape'],
+    closeLabel: "Close",
+    cssClass: ['modal-1', 'modal-2', 'modal-3'],
+    onOpen: function () {
+      console.log('modal open');
+    },
+    onClose: function () {
+      console.log('modal closed');
+    },
+  });
+  modal.addFooterBtn('Ask more', 'btn btn--primary', function () {
+    var url = 'https://t.me/uniworkerSupport'
+    window.open(url, '_blank')
+  });
+  modal.addFooterBtn('Go back', 'btn btn--danger', function () {
+    modal.close();
+  });
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#modal-1') || e.target.closest('#modal-2') || e.target.closest('#modal-3')) {
+      modal.open();
+    }
+    if (e.target.closest('#modal-1')) {
+      modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Type of service</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+          let tableRows = '';
+          for (let i = 0; i < video.service.length; i++) {
+            tableRows += `<tr><td>${i + 1}</td><td>${video.service[i]}</td><td>${video.priceUS[i]}</td></tr>`;
+          }
+          return tableRows;
+        })()}
+                </tbody>
+              </table>
+      `);
+    }
+    if (e.target.closest('#modal-2')) {
+      modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Type of service</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+          let tableRows = '';
+          for (let i = 0; i < editing.service.length; i++) {
+            tableRows += `<tr><td>${i + 1}</td><td>${editing.service[i]}</td><td>${editing.priceUS[i]}</td></tr>`;
+          }
+          return tableRows;
+        })()}
+                </tbody>
+              </table>
+      `);
+    }
+    if (e.target.closest('#modal-3')) {
+      modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Type of service</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+          let tableRows = '';
+          for (let i = 0; i < webdev.service.length; i++) {
+            tableRows += `<tr><td>${i + 1}</td><td>${webdev.service[i]}</td><td>${webdev.priceUS[i]}</td></tr>`;
+          }
+          return tableRows;
+        })()}
+                </tbody>
+              </table>
+      `);
     }
   })
 })
