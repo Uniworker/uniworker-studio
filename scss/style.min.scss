@@ -64,6 +64,27 @@ $success: #2BC016;
   }
 }
 
+@keyframes spin {
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -811,8 +832,9 @@ textarea {
       flex-direction: column;
       align-items: center;
       gap: 2em;
-      min-height: 500px;
+      min-height: 400px;
       margin-bottom: 0;
+      position: relative;
     }
     label {
       @extend %montserrat;
@@ -962,5 +984,18 @@ textarea {
     font-size: 26rem;
     line-height: 50%;
     padding: 0.5em;
+  }
+}
+
+#loader {
+  height: 64px;
+  width: 64px;
+  animation: spin 1s linear infinite;
+  circle {
+    fill: none;
+    stroke: $primary;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
   }
 }

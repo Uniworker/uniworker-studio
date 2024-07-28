@@ -294,6 +294,13 @@
     padding: 0.75em;
   }
   }
+  #loader {
+  height: 82px;
+  width: 82px;
+  circle {
+    stroke-width: 3px;
+  }
+}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -534,4 +541,11 @@
     padding: 1em;
   }
   }
+  #loader {
+  height: 96px;
+  width: 96px;
+  circle {
+    stroke-width: 2px;
+  }
+}
 }

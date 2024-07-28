@@ -41,13 +41,14 @@
   <link rel="stylesheet" href="css/bemskel.min.css">
   <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/tingle.min.css">
-  <link rel="stylesheet" href="css/easteregg.css">
+  <link rel="stylesheet" href="css/easteregg.min.css">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/media.min.css">
   <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
   <![endif]-->
+  <script>var submitted = false;</script>
   <script src="js/modernizr-3.11.2.min.js" defer></script>
   <script src="js/swiper-bundle.min.js" defer></script>
   <script src="js/tingle.min.js" defer></script>
@@ -84,9 +85,9 @@
                   <span>&nbsp;</span>
                   <span>&nbsp;</span>
                   <ul class="header__menu-list">
-                    <li class="header__menu-item"><a href="#howto">Services</a></li>
+                    <li class="header__menu-item"><a href="#service">Services</a></li>
+                    <li class="header__menu-item"><a href="#howto">How we work</a></li>
                     <li class="header__menu-item"><a href="#portfolio">Portfolio</a></li>
-                    <li class="header__menu-item"><a href="#template">Templates</a></li>
                     <li class="header__menu-item"><a href="#about">About us</a></li>
                     <li class="header__menu-item"><a href="#contact">Contacts</a></li>
                     <li class="header__menu-item">
@@ -501,19 +502,21 @@
       <div class="contacts__wrapper">
         <div class="contacts__inner flex-grid">
           <div class="contacts__form flex-grid__col">
-            <form autocomplete="off" method="POST" action="/subscribe" enctype="application/x-www-form-urlencoded" target="_blank" name="feedback">
+            <form name="feedback" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSesV9Kqv4eXLYfW5ZUZ9kXyipPqux5MEdcjApR1L2NErK9fPw/formResponse?" enctype="text/plain" target="redirect" onsubmit="submitted=true;">
               <label>
-                First name *<br><input type="text" name="nickname" placeholder="John Doe" required pattern=".*\S.*">
+                First name *<br><input type="text" name="entry.2005620554" id="entry.2005620554" placeholder="John Doe" required pattern=".*\S.*">
               </label>
               <label>
-                Email *<br><input type="email" name="email" placeholder="johndoe@gmail.com" required>
+                Email *<br><input type="email" name="entry.1045781291" id="entry.1045781291" placeholder="johndoe@gmail.com" required>
               </label>
               <label>
-                Message<br><textarea name="message" placeholder="Leave your text here"></textarea>
+                Message<br><textarea name="entry.1065046570" id="entry.1065046570" placeholder="Leave your text here"></textarea>
                 <span id="counter"></span>
               </label>
+              <label hidden aria-hidden="true"></label>
               <input type="submit" class="contacts__sender btn" id="sender">
             </form>
+            <iframe name="redirect" id="redirect" onload="if(submitted) {}" allow="https://docs.google.com/" allowfullscreen hidden></iframe>
           </div>
           <div class="contacts__content flex-grid__col">
             <h2 class="contacts__caption">Ask whatever you want</h2>
