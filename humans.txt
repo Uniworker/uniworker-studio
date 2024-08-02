@@ -1,4 +1,4 @@
-# www.uniworker.net
+# www.uniworker.com.ua
 # The humans responsible & technology colophon
 
 # TEAM
@@ -15,13 +15,13 @@
 
   Approach - Mobile first, BEM
   Front - CSS3 or SCSS?, HTML5, ES6
-  Back - Open Server(test), WordPress(prod) or Textolite?, GitHub Pages, PHP7+, MySQL
+  Back - Open Server(test), GitHub Pages
   Libs:
   Modernizr & HTML5Shiv - for IE
   Normalize.css - for compatibility
-  Animate.css - for animation
-  Milligram.css - for template
-  PHP Mailer - for feedback
+  Tingle.css - for pop-ups
+  Bemskel.css - for template
+  Google forms - for feedback
 
   Elements:
   Hamburger menu

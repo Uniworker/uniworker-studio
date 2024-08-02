@@ -1,10 +1,11 @@
+var page = window.location.pathname
 var viewport = window.innerWidth || document.documentElement.clientWidth
 var uiBtns = Array.from(document.querySelectorAll('.btn-outline--warning'))
 
 if (document.readyState == "interactive") {
   document.body.dataset.loaded = false
-  document.documentElement.style.cssText = 'background: #181A20;overflow:hidden';
-  fadeIn(document.body, 2000, 20)
+  document.documentElement.style.cssText = 'background: #181A20;overflow:hidden; pointer-events: none';
+  fadeIn(document.body, 1500, 30)
   var loader = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   loader.setAttribute("id", "loader")
   loader.setAttribute("viewBox", "0 0 50 50");
@@ -16,10 +17,10 @@ if (document.readyState == "interactive") {
   loader.style.cssText = "position:absolute;top:50%;left:50%;translate:-50%;z-index:999"
   document.body.appendChild(loader);
   setInterval(() => {
-    document.documentElement.style.cssText = 'background: none;overflow:visible';
+    document.documentElement.style.cssText = 'background: none;overflow:visible; pointer-events: all';
     loader.remove()
     document.body.dataset.loaded = true
-  }, 2000)
+  }, 1500)
   document.addEventListener('DOMContentLoaded', main())
 } else {
   document.body.dataset.loaded = true
@@ -68,6 +69,13 @@ function main() {
       document.getElementById('top').style.display = 'block'
     } else {
       document.getElementById('top').style.display = 'none'
+    }
+  });
+  document.addEventListener('change', (e) => {
+    if (e.target.closest('#lang')) {
+      if (e.target.value === 'en') window.location.replace('http://127.0.0.1:5500/en/index.html')
+      if (e.target.value === 'ru') window.location.replace('http://127.0.0.1:5500/ru/index.html')
+      if (e.target.value === 'uk') window.location.replace('http://127.0.0.1:5500/index.html')
     }
   });
   document.addEventListener('click', (e) => {

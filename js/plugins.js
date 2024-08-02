@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  var modal = new tingle.modal({
+  const modal = new tingle.modal({
     footer: true,
     stickyFooter: false,
     closeMethods: ['button', 'escape'],
@@ -62,19 +62,84 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('modal closed');
     },
   });
-  modal.addFooterBtn('Ask more', 'btn btn--primary', function () {
-    var url = 'https://t.me/uniworkerSupport'
-    window.open(url, '_blank')
-  });
-  modal.addFooterBtn('Go back', 'btn btn--danger', function () {
-    modal.close();
-  });
+  if (document.documentElement.lang === 'uk') {
+    modal.addFooterBtn('Детальніше', 'btn btn--primary', function () {
+      var url = 'https://t.me/uniworkerSupport'
+      window.open(url, '_blank')
+    });
+    modal.addFooterBtn('Назад', 'btn btn--danger', function () {
+      modal.close();
+    });
+  }
+  if (document.documentElement.lang === 'ru') {
+    modal.addFooterBtn('Подробнее', 'btn btn--primary', function () {
+      var url = 'https://t.me/uniworkerSupport'
+      window.open(url, '_blank')
+    });
+    modal.addFooterBtn('Назад', 'btn btn--danger', function () {
+      modal.close();
+    });
+  }
+  if (document.documentElement.lang === 'en') {
+    modal.addFooterBtn('Ask more', 'btn btn--primary', function () {
+      var url = 'https://t.me/uniworkerSupport'
+      window.open(url, '_blank')
+    });
+    modal.addFooterBtn('Go back', 'btn btn--danger', function () {
+      modal.close();
+    });
+  }
   document.addEventListener('click', (e) => {
     if (e.target.closest('#modal-1') || e.target.closest('#modal-2') || e.target.closest('#modal-3')) {
       modal.open();
     }
     if (e.target.closest('#modal-1')) {
-      modal.setContent(`
+      if (document.documentElement.lang === 'uk') {
+        modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Категорія послуги</th>
+                    <th>Вартість</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+            let tableRows = '';
+            for (let i = 0; i < video.serviceUK.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceUK[i]}</td><td>${video.priceUK[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
+                </tbody>
+              </table>
+      `);
+      }
+      if (document.documentElement.lang === 'ru') {
+        modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Вид услуги</th>
+                    <th>Стоимость</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+            let tableRows = '';
+            for (let i = 0; i < video.serviceRU.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceRU[i]}</td><td>${video.priceRU[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
+                </tbody>
+              </table>
+      `);
+      }
+      if (document.documentElement.lang === 'en') {
+        modal.setContent(`
         <table class="table table--striped">
                 <thead>
                   <tr>
@@ -85,18 +150,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 </thead>
                 <tbody>
                 ${(() => {
-          let tableRows = '';
-          for (let i = 0; i < video.service.length; i++) {
-            tableRows += `<tr><td>${i + 1}</td><td>${video.service[i]}</td><td>${video.priceUS[i]}</td></tr>`;
-          }
-          return tableRows;
-        })()}
+            let tableRows = '';
+            for (let i = 0; i < video.serviceEN.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceEN[i]}</td><td>${video.priceEN[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
                 </tbody>
               </table>
       `);
+      }
     }
     if (e.target.closest('#modal-2')) {
-      modal.setContent(`
+      if (document.documentElement.lang === 'uk') {
+        modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Категорія послуги</th>
+                    <th>Вартість</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+            let tableRows = '';
+            for (let i = 0; i < video.serviceUK.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceUK[i]}</td><td>${video.priceUK[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
+                </tbody>
+              </table>
+      `);
+      }
+      if (document.documentElement.lang === 'ru') {
+        modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Вид услуги</th>
+                    <th>Стоимость</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+            let tableRows = '';
+            for (let i = 0; i < editing.serviceRU.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${editing.serviceRU[i]}</td><td>${editing.priceRU[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
+                </tbody>
+              </table>
+      `);
+      }
+      if (document.documentElement.lang === 'en') {
+        modal.setContent(`
         <table class="table table--striped">
                 <thead>
                   <tr>
@@ -107,18 +218,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 </thead>
                 <tbody>
                 ${(() => {
-          let tableRows = '';
-          for (let i = 0; i < editing.service.length; i++) {
-            tableRows += `<tr><td>${i + 1}</td><td>${editing.service[i]}</td><td>${editing.priceUS[i]}</td></tr>`;
-          }
-          return tableRows;
-        })()}
+            let tableRows = '';
+            for (let i = 0; i < editing.serviceEN.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${editing.serviceEN[i]}</td><td>${editing.priceEN[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
                 </tbody>
               </table>
       `);
+      }
     }
     if (e.target.closest('#modal-3')) {
-      modal.setContent(`
+      if (document.documentElement.lang === 'uk') {
+        modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Категорія послуги</th>
+                    <th>Вартість</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+            let tableRows = '';
+            for (let i = 0; i < video.serviceUK.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceUK[i]}</td><td>${video.priceUK[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
+                </tbody>
+              </table>
+      `);
+      }
+      if (document.documentElement.lang === 'ru') {
+        modal.setContent(`
+        <table class="table table--striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Вид услуги</th>
+                    <th>Стоимость</th>
+                  </tr>
+                </thead>
+                <tbody>
+                ${(() => {
+            let tableRows = '';
+            for (let i = 0; i < webdev.serviceRU.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${webdev.serviceRU[i]}</td><td>${webdev.priceRU[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
+                </tbody>
+              </table>
+      `);
+      }
+      if (document.documentElement.lang === 'en') {
+        modal.setContent(`
         <table class="table table--striped">
                 <thead>
                   <tr>
@@ -129,15 +286,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 </thead>
                 <tbody>
                 ${(() => {
-          let tableRows = '';
-          for (let i = 0; i < webdev.service.length; i++) {
-            tableRows += `<tr><td>${i + 1}</td><td>${webdev.service[i]}</td><td>${webdev.priceUS[i]}</td></tr>`;
-          }
-          return tableRows;
-        })()}
+            let tableRows = '';
+            for (let i = 0; i < webdev.serviceEN.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${webdev.serviceEN[i]}</td><td>${webdev.priceEN[i]}</td></tr>`;
+            }
+            return tableRows;
+          })()}
                 </tbody>
               </table>
       `);
+      }
     }
   })
 })
