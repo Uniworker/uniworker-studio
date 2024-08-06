@@ -1,6 +1,15 @@
 import { video, editing, webdev } from "../js/data.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    disable: 'phone',
+    offset: 200,
+    delay: 0,
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+  })
+
   const slider = new Swiper('.swiper', {
     autoHeight: true,
     centeredSlides: true,

@@ -337,6 +337,9 @@ textarea {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+.header__btn::before {
+  all: unset;
+}
 .header__scroller {
   background: transparent;
   border: 2px solid #FBEC13;
@@ -375,6 +378,7 @@ textarea {
   gap: 4em;
   padding-top: 2em;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 .service__tiles .flex-grid__col:last-of-type .service__image::before {
   translate: 4% 0;
@@ -472,7 +476,7 @@ textarea {
   text-wrap: balance;
   line-height: 1.5;
   margin: auto;
-  max-height: 75px;
+  max-height: 100px;
   max-width: 350px;
   overflow-y: auto;
 }

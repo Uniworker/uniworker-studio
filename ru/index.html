@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="../css/normalize.min.css">
   <link rel="stylesheet" href="../css/fonts.min.css">
   <link rel="stylesheet" href="../css/bemskel.min.css">
+  <link rel="stylesheet" href="../css/aos.min.css">
   <link rel="stylesheet" href="../css/swiper-bundle.min.css">
   <link rel="stylesheet" href="../css/tingle.min.css">
   <link rel="stylesheet" href="../css/easteregg.min.css">
@@ -50,6 +51,7 @@
   <![endif]-->
   <script>var submitted = false;</script>
   <script src="../js/modernizr-3.11.2.min.js" defer></script>
+  <script src="../js/aos.min.js" defer></script>
   <script src="../js/swiper-bundle.min.js" defer></script>
   <script src="../js/tingle.min.js" defer></script>
   <script src="../js/plugins.js" defer type="module"></script>
@@ -114,7 +116,7 @@
         <div class="container">
           <div class="flex-grid header__outer">
             <div class="flex-grid__col">
-              <a href="https://forms.gle/AYJxJET3D6HvWHnU8" class="btn btn--danger btn--raised header__btn" id="init-btn" rel="external">Заполнить заявку</a>
+              <a href="https://forms.gle/AYJxJET3D6HvWHnU8" class="btn btn--danger btn--raised header__btn" id="init-btn" rel="external" data-aos="zoom-in-down" data-aos-delay="800">Заполнить заявку</a>
             </div>
             <div class="flex-grid__col flex-grid__col--fixed-width">
               <div class="header__scroller">
@@ -129,12 +131,12 @@
   <section class="service" id="service">
     <div class="container">
       <div class="service__top">
-        <h1 class="service__title">Мы можем творить</h1>
-        <p class="service__subtitle">Все лучшее для вашего онлайн бизнеса с 2020 года</p>
+        <h1 class="service__title" data-aos="fade-right">Мы можем творить</h1>
+        <p class="service__subtitle" data-aos="fade-left">Все лучшее для вашего онлайн бизнеса с 2020 года</p>
       </div>
       <div class="service__wrapper">
         <div class="service__tiles flex-grid">
-          <div class="flex-grid__col">
+          <div class="flex-grid__col" data-aos="fade-up" data-aos-delay="300">
             <div class="service__block flex-grid">
               <figure class="service__image flex-grid__col">
                 <img src="../img/video-gray.png" alt="Видео съемка" loading="lazy" title="Видео съемка">
@@ -144,7 +146,7 @@
               <button id="modal-1" class="service__btn flex-grid__col btn btn-outline--warning modal-1">Узнать цену</button>
             </div>
           </div>
-          <div class="flex-grid__col">
+          <div class="flex-grid__col" data-aos="fade-up" data-aos-delay="400">
             <div class="service__block flex-grid">
               <figure class="service__image flex-grid__col">
                 <img src="../img/editing-gray.png" alt="Монтаж видео" loading="lazy" title="Монтаж видео">
@@ -154,7 +156,7 @@
               <button id="modal-2" class="service__btn flex-grid__col btn btn-outline--warning modal-2">Узнать цену</button>
             </div>
           </div>
-          <div class="flex-grid__col">
+          <div class="flex-grid__col" data-aos="fade-up" data-aos-delay="500">
             <div class="service__block flex-grid">
               <figure class="service__image flex-grid__col">
                 <img src="../img/clean-code-gray.png" alt="Веб разработка" loading="lazy" title="Веб разработка">
@@ -182,13 +184,13 @@
         </figure>
         <div class="howto__content flex-grid__col">
           <div class="container">
-            <h2 class="howto__title">Как снять свой собственный <span>фильм?</span></h2>
-            <ul class="howto__list">
+            <h2 class="howto__title" data-aos="fade-left">Как снять свой собственный <span>фильм?</span></h2>
+            <ul class="howto__list" data-aos="fade-left" data-aos-delay="200">
               <li>Нажмите кнопку ниже и расскажите нашему менеджеру о своем удивительном сценарии</li>
               <li>Вместе мы бесплатно составляем все технические спецификации и условия вашего проекта под ваши нужды в виде документа</li>
               <li>Мы справимся с вашими трудностями во время съемок, чтобы добиться идеального кадра, или вернем деньги обратно</li>
             </ul>
-            <a href="https://t.me/uniworkerSupport" class="howto__btn btn btn-outline--warning" target="_blank" rel="noopener">Организовать сьемки</a>
+            <a href="https://t.me/uniworkerSupport" class="howto__btn btn btn-outline--warning" target="_blank" rel="noopener" data-aos="fade-left" data-aos-delay="100">Организовать сьемки</a>
           </div>
         </div>
       </div>
@@ -201,13 +203,13 @@
         </figure>
         <div class="howto__content flex-grid__col">
           <div class="container">
-            <h2 class="howto__title">Как создать идеальное <span>видео?</span></h2>
-            <ul class="howto__list">
+            <h2 class="howto__title" data-aos="fade-right">Как создать идеальное <span>видео?</span></h2>
+            <ul class="howto__list" data-aos="fade-right" data-aos-delay="200">
 	            <li>Нажмите кнопку ниже и расскажите нашему менеджеру, как должен выглядеть ваш потрясающий фильм или видеоролик</li>
               <li>Вместе мы бесплатно составляем все технические спецификации и условия вашего проекта под ваши нужды в виде документа</li>
               <li>Выдохните и проверьте готовый результат, когда мы выполним всю черновую работу за вас вовремя</li>
             </ul>
-            <a href="https://t.me/uniworkerSupport" class="howto__btn btn btn-outline--warning" target="_blank" rel="noopener">Смонтировать видео</a>
+            <a href="https://t.me/uniworkerSupport" class="howto__btn btn btn-outline--warning" target="_blank" rel="noopener" data-aos="fade-right" data-aos-delay="100">Смонтировать видео</a>
           </div>
         </div>
       </div>
@@ -220,13 +222,13 @@
         </figure>
         <div class="howto__content flex-grid__col">
           <div class="container">
-            <h2 class="howto__title">Как сделать современный <span>сайт?</span></h2>
-            <ul class="howto__list">
+            <h2 class="howto__title" data-aos="fade-left">Как сделать современный <span>сайт?</span></h2>
+            <ul class="howto__list" data-aos="fade-left" data-aos-delay="200">
 	            <li>Нажмите кнопку ниже и сообщите нашему менеджеру, какой сайт вам нужен</li>
               <li>Вместе мы бесплатно составляем все технические спецификации и условия вашего проекта под ваши нужды в виде документа</li>
               <li>Доверьтесь нашим мастерам и получите сайт, выполненный в точности так, как вы его себе представляли, в срок</li>
             </ul>
-            <a href="https://t.me/uniworkerSupport" class="howto__btn btn btn-outline--warning" target="_blank" rel="noopener">Разработать сайт</a>
+            <a href="https://t.me/uniworkerSupport" class="howto__btn btn btn-outline--warning" target="_blank" rel="noopener" data-aos="fade-left" data-aos-delay="100">Разработать сайт</a>
           </div>
         </div>
       </div>
@@ -235,8 +237,8 @@
   <section class="portfolio" id="portfolio">
     <div class="container">
       <div class="portfolio__top">
-        <h1 class="portfolio__title">Портфолио</h1>
-        <p class="portfolio__subtitle">Творческие люди верят в силу идей</p>
+        <h1 class="portfolio__title" data-aos="fade-right">Портфолио</h1>
+        <p class="portfolio__subtitle" data-aos="fade-left">Творческие люди верят в силу идей</p>
       </div>
       <div class="portfolio__wrapper">
         <div class="portfolio__accordion">
@@ -314,7 +316,7 @@
               <div class="portfolio__slider swiper">
                 <div class="portfolio__wrapper swiper-wrapper">
                   <figure class="portfolio__slide swiper-slide">
-                    <a class="portfolio__link" href="#" rel="external">
+                    <a class="portfolio__link" href="https://uniworker.github.io/dverimarket/" rel="external">
                       <picture>
                         <source srcset="../img/website1.webp" type="image/webp">
                         <img src="../img/website1.jpg" alt="дизайн страницы" loading="lazy">
@@ -347,6 +349,24 @@
                         <img src="../img/website4.jpg" alt="дизайн страницы" loading="lazy">
                       </picture>
                       <figcaption>Игровая платформа</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="portfolio__slide swiper-slide">
+                    <a class="portfolio__link" href="https://uniworker.github.io/resolut/" rel="external">
+                      <picture>
+                        <source srcset="../img/website5.webp" type="image/webp">
+                        <img src="../img/website5.jpg" alt="дизайн сторінки" loading="lazy">
+                      </picture>
+                      <figcaption>Корпоративный сайт для провайдера</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="portfolio__slide swiper-slide">
+                    <a class="portfolio__link" href="https://uniworker.github.io/oxygen/" rel="external">
+                      <picture>
+                        <source srcset="../img/website6.webp" type="image/webp">
+                        <img src="../img/website6.jpg" alt="дизайн сторінки" loading="lazy">
+                      </picture>
+                      <figcaption>Сайт для IT компании</figcaption>
                     </a>
                   </figure>
                 </div>
@@ -421,12 +441,12 @@
   <section class="team" id="about">
     <div class="container">
       <div class="team__top">
-        <h1 class="team__title">Знакомтесь с командой</h1>
-        <p class="team__subtitle">Сотрудничество профессионалов - ключ к созданию потрясающих проектов</p>
+        <h1 class="team__title" data-aos="fade-right">Знакомтесь с командой</h1>
+        <p class="team__subtitle" data-aos="fade-left">Сотрудничество профессионалов - ключ к созданию потрясающих проектов</p>
       </div>
       <div class="team__wrapper">
         <div class="team__cards flex-grid">
-          <div class="team__card flex-grid__col">
+          <div class="team__card flex-grid__col" data-aos="fade-up" data-aos-delay="300">
             <figure class="team__photo">
               <picture>
                 <source srcset="../img/tim-technician.webp" type="image/webp">
@@ -455,7 +475,7 @@
             <strong class="team__role">Видео монтажёр</strong>
             <a href="tim-resume-ua.jpg" class="team__btn btn btn-outline--warning" rel="me">Смортеть резюме</a>   
           </div>
-          <div class="team__card flex-grid__col">
+          <div class="team__card flex-grid__col" data-aos="fade-up" data-aos-delay="400">
             <figure class="team__photo">
               <picture>
                 <source srcset="../img/marko-yatsyn.webp" type="image/webp">
@@ -491,12 +511,12 @@
   <section class="contacts" id="contact">
     <div class="container">
       <div class="contacts__top">
-        <h1 class="contacts__title">Связаться с вами</h1>
-        <p class="contacts__subtitle">Не стесняйтесь, напишите нам, чтобы оставить отзыв</p>
+        <h1 class="contacts__title" data-aos="fade-right">Связаться с вами</h1>
+        <p class="contacts__subtitle" data-aos="fade-left">Не стесняйтесь, напишите нам, чтобы оставить отзыв</p>
       </div>
       <div class="contacts__wrapper">
         <div class="contacts__inner flex-grid">
-          <div class="contacts__form flex-grid__col">
+          <div class="contacts__form flex-grid__col" data-aos="fade-up-left" data-aos-delay="300">
             <form name="feedback" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSesV9Kqv4eXLYfW5ZUZ9kXyipPqux5MEdcjApR1L2NErK9fPw/formResponse?" enctype="text/plain" target="redirect" onsubmit="submitted=true;">
               <label>
                 Имя пользователя *<br><input type="text" name="entry.2005620554" id="entry.2005620554" placeholder="Иван Пупкин" required pattern=".*\S.*">
@@ -517,13 +537,13 @@
             <h2 class="contacts__caption">Спрашивайте все, что угодно</h2>
             <p class="contacts__summary">Наш менеджер постарается ответить как можно скорее. Наша команда уделяет внимание каждому письму, будь то письмо просто для развлечения или деловое предложение.</p>
             <ul class="contacts__list">
-              <li>
+              <li data-aos="fade-up" data-aos-delay="400">
                 <a href="https://maps.app.goo.gl/pGAPibfPUL7B7BiT9" class="contacts__link">Украина, Киев, 04114</a>
               </li>
-              <li>
+              <li data-aos="fade-up" data-aos-delay="450">
                 <a href="tel:+380982982408" class="contacts__link">+380-98-298-24-08</a>
               </li>
-              <li>
+              <li data-aos="fade-up" data-aos-delay="500">
                 <a href="mailto:customers@uniworker.com.ua?subject=Новый%20запрос&amp;body=Приветствую,%20уважаемая%20команда%20Uniworker%20студии" class="contacts__link">customers@uniworker.com.ua</a>
               </li>
             </ul>
@@ -580,7 +600,8 @@
     </div>
   </footer>
   <div id="top"><button class="btn btn--primary">&#8679;</button></div>
-  <!-- Google tag (gtag.js) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8719009972927371"
+    crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGKXCPRV48"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
