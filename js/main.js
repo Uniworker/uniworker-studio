@@ -73,9 +73,9 @@ function main() {
   });
   document.addEventListener('change', (e) => {
     if (e.target.closest('#lang')) {
-      if (e.target.value === 'en') window.location.replace('http://127.0.0.1:5500/en/index.html')
-      if (e.target.value === 'ru') window.location.replace('http://127.0.0.1:5500/ru/index.html')
-      if (e.target.value === 'uk') window.location.replace('http://127.0.0.1:5500/index.html')
+      if (e.target.value === 'en') window.location.replace('https://uniworker.com.ua/en/index.html')
+      if (e.target.value === 'ru') window.location.replace('https://uniworker.com.ua/ru/index.html')
+      if (e.target.value === 'uk') window.location.replace('https://uniworker.com.ua/index.html')
     }
   });
   document.addEventListener('click', (e) => {
