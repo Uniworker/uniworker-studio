@@ -120,6 +120,13 @@ textarea {
   height: 24px;
   width: 24px;
 }
+.social__frhnt {
+  background: transparent url("../bg/frhnt.png") no-repeat center;
+  background-size: contain;
+  display: block;
+  height: 24px;
+  width: 24px;
+}
 .social__yt {
   background: transparent url("../bg/yt.svg") no-repeat center;
   background-size: contain;
@@ -647,13 +654,13 @@ textarea {
   background-color: rgba(248, 246, 240, 0.1);
   border-radius: 8px;
   box-shadow: 0 0 5px #797979;
-  min-height: 520px;
+  min-height: 450px;
   padding: 0.25em;
 }
 .team__photo {
   margin-bottom: 0;
   padding-bottom: 0;
-  height: 60%;
+  height: 70%;
   position: relative;
 }
 .team__photo:hover .team__info {
@@ -664,7 +671,7 @@ textarea {
 }
 .team__photo img {
   border-radius: 8px;
-  min-height: 330px;
+  min-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }

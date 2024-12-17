@@ -50,7 +50,25 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
   <![endif]-->
-  <script>var submitted = false;</script>
+  <script>
+    var submitted = false;
+    var userLang = navigator.language || navigator.userLanguage;
+    if (document.readyState === 'loading') {
+        switch (userLang) {
+            case 'ru':
+            case 'ru-RU':
+                window.location.replace('https://uniworker.com.ua/ru/index.html')
+                break
+            case 'uk':
+            case 'uk-UA':
+                window.location.replace('https://uniworker.com.ua/index.html')
+                break
+            default:
+                window.location.replace('https://uniworker.com.ua/en/index.html')
+                break
+        }
+    }
+  </script>
   <script src="js/modernizr-3.11.2.min.js" defer></script>
   <script src="js/aos.min.js" defer></script>
   <script src="js/swiper-bundle.min.js" defer></script>
@@ -96,7 +114,7 @@
                     <li class="header__menu-item">
                       <div class="social__list flex-grid">
                         <div class="flex-grid__col">
-                          <a class="social__inst" href="" target="_blank" rel="noopener" title="Незабаром..."></a>
+                          <a class="social__frhnt" href="https://freelancehunt.com/freelancer/uniworker.html" target="_blank" rel="noopener" title="freelancehunt"></a>
                         </div>
                         <div class="flex-grid__col">
                           <a class="social__yt" href="https://www.youtube.com/@UNIWORKER23" target="_blank" rel="noopener" title="Наш Ютуб"></a>
@@ -180,7 +198,7 @@
         <figure class="howto__image flex-grid__col">
           <picture>
             <source srcset="img/videoprod.webp" type="image/webp">
-            <img src="img/videoprod.jpg" loading="lazy" alt="професійний оператор">
+            <img src="img/videoprod.jpeg" loading="lazy" alt="професійний оператор">
           </picture>
         </figure>
         <div class="howto__content flex-grid__col">
@@ -199,7 +217,7 @@
         <figure class="howto__image flex-grid__col">
           <picture>
             <source srcset="img/editing.webp" type="image/webp">
-            <img src="img/editing.jpg" loading="lazy" alt="програма відео редактор">
+            <img src="img/editing.jpeg" loading="lazy" alt="програма відео редактор">
           </picture>
         </figure>
         <div class="howto__content flex-grid__col">
@@ -258,33 +276,34 @@
                       <figcaption>Огляд бізнесу</figcaption>
                     </a>
                   </figure>
-                  <figure class="portfolio__slide swiper-slide">
-                    <a class="portfolio__link" href="https://youtu.be/HQAiESKUDgw?feature=shared" rel="external">
-                      <picture>
-                        <source srcset="img/video2.webp" type="image/webp">
-                        <img src="img/video2.jpg" alt="превью на Ютуб" loading="lazy">
-                      </picture>
-                      <figcaption>Огляд бізнесу</figcaption>
-                    </a>
-                  </figure>
-                  <figure class="portfolio__slide swiper-slide">
-                    <a class="portfolio__link" href="https://youtu.be/JmcBbkOQ6BE?feature=shared" rel="external">
-                      <picture>
-                        <source srcset="img/video3.webp" type="image/webp">
-                        <img src="img/video3.jpg" alt="превью на Ютуб" loading="lazy">
-                      </picture>
-                      <figcaption>Огляд бізнесу</figcaption>
-                    </a>
-                  </figure>
-                  <figure class="portfolio__slide swiper-slide">
+                <figure class="portfolio__slide swiper-slide">
                     <a class="portfolio__link" href="https://youtu.be/gYCM9AbrqM4?feature=shared" rel="external">
-                      <picture>
-                        <source srcset="img/video4.webp" type="image/webp">
-                        <img src="img/video4.jpg" alt="превью на Ютуб" loading="lazy">
-                      </picture>
-                      <figcaption>Інтервью зі знаменитістю</figcaption>
+                        <picture>
+                            <source srcset="img/video4.webp" type="image/webp">
+                            <img src="img/video4.jpg" alt="превью на Ютуб" loading="lazy">
+                        </picture>
+                        <figcaption>Інтервью</figcaption>
                     </a>
-                  </figure>
+                </figure>
+                <figure class="portfolio__slide swiper-slide">
+                    <a class="portfolio__link" href="https://drive.google.com/file/d/1wr69UptO3tzespRjy_YKb-0yL38lK56i/view?usp=sharing"
+                        rel="external">
+                        <picture>
+                            <source srcset="img/video6.webp" type="image/webp">
+                            <img src="img/video6.jpg" alt="превью на Ютуб" loading="lazy">
+                        </picture>
+                        <figcaption>Рекламний ролик</figcaption>
+                    </a>
+                </figure>
+                <figure class="portfolio__slide swiper-slide">
+                    <a class="portfolio__link" href="https://youtu.be/HQAiESKUDgw?feature=shared" rel="external">
+                        <picture>
+                            <source srcset="img/video2.webp" type="image/webp">
+                            <img src="img/video2.jpg" alt="превью на Ютуб" loading="lazy">
+                        </picture>
+                        <figcaption>Огляд бізнесу</figcaption>
+                    </a>
+                </figure>
                   <figure class="portfolio__slide swiper-slide">
                     <a class="portfolio__link" href="https://youtu.be/Q5RsQWm3rOY?feature=shared" rel="external">
                       <picture>
@@ -292,15 +311,6 @@
                         <img src="img/video5.jpg" alt="превью на Ютуб" loading="lazy">
                       </picture>
                       <figcaption>Вірусний кліп</figcaption>
-                    </a>
-                  </figure>
-                  <figure class="portfolio__slide swiper-slide">
-                    <a class="portfolio__link" href="https://drive.google.com/file/d/1D3UQK8t30-yhUvuWWH5ZswFyxYAm9mnj/view?usp=drive_link" rel="external">
-                      <picture>
-                        <source srcset="img/video6.webp" type="image/webp">
-                        <img src="img/video6.jpg" alt="превью на Ютуб" loading="lazy">
-                      </picture>
-                      <figcaption>Рекламний ролик</figcaption>
                     </a>
                   </figure>
                 </div>
@@ -473,7 +483,6 @@
             </figure>
             <h2 class="team__name">Тимур Оранський</h2>
             <strong class="team__role">Оператор</strong>
-            <strong class="team__role">Відео редактор</strong>
             <a href="tim-resume-ua.jpg" class="team__btn btn btn-outline--warning" rel="me">Відкрити резюме</a>   
           </div>
           <div class="team__card flex-grid__col" data-aos="fade-up" data-aos-delay="400">
@@ -501,8 +510,7 @@
               </figcaption>
             </figure>
             <h2 class="team__name">Марко Яцин</h2>
-            <strong class="team__role">Ютуб блогер</strong>
-            <strong class="team__role">Розробник</strong>
+            <strong class="team__role">Відео редактор</strong>
             <a href="marko-resume-uk.pdf" class="team__btn btn btn-outline--warning" rel="me">Відкрити резюме</a> 
           </div>
         </div>
@@ -583,7 +591,7 @@
         <div class="footer__media flex-grid__col">
           <div class="social__list flex-grid">
             <div class="flex-grid__col">
-              <a class="social__inst" href="" target="_blank" rel="noopener" title="Незабаром..."></a>
+            <a class="social__frhnt" href="https://freelancehunt.com/freelancer/uniworker.html" target="_blank" rel="noopener" title="freelancehunt"></a>
             </div>
             <div class="flex-grid__col">
               <a class="social__yt" href="https://www.youtube.com/@UNIWORKER23" target="_blank" rel="noopener"
