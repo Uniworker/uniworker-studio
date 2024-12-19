@@ -52,20 +52,24 @@
   <![endif]-->
   <script>
     var submitted = false;
-    var userLang = navigator.language || navigator.userLanguage;
-    if (document.readyState === 'loading') {
-        switch (userLang) {
-            case 'ru':
-            case 'ru-RU':
-                window.location.replace('https://uniworker.com.ua/ru/index.html')
-                break
-            case 'uk':
-            case 'uk-UA':
-                window.location.replace('https://uniworker.com.ua/index.html')
-                break
-            default:
-                window.location.replace('https://uniworker.com.ua/en/index.html')
-                break
+    if (document.readyState == 'loading') {
+        if (!sessionStorage.getItem('redirected')) {
+            var userLang = navigator.language || navigator.userLanguage;
+            var mapLang = {
+                'en': 'en/index.html',
+                'ru': 'ru/index.html',
+                'uk': 'index.html'
+            }
+            function loadUserLang() {
+                var langCode = userLang.split('-')[0]
+                return mapLang[langCode] || mapLang['en']
+            }
+            var current = window.location.pathname.split('/').pop()
+            var target = loadUserLang()
+            if (current !== target) {
+                sessionStorage.setItem('redirected', 'true')
+                window.location.href = target
+            }
         }
     }
   </script>
