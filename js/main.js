@@ -98,20 +98,31 @@ function main() {
       }
     }
   })
-  document.forms.feedback.addEventListener('submit', (e) => {
-    for (let field = 0; field < e.target.elements.length; field++) {
-      fadeIn(e.target.getElementsByTagName('label')[field], 3000, 300)
-      fadeIn(e.target.elements[field], 3000, 300)
-      if (field == e.target.elements.length - 1) {
-        var done = document.createElement('p')
-        done.innerHTML = '&#9989; Got your feedback'
-        done.style.cssText = 'color:#FBEC13;font-family:\'Montserrat\',sans-serif;font-weight: 500; text-align:center;text-transform:uppercase;position:absolute;top:45%;left:50%;width:100%;translate:-50%;z-index:999'
-        e.target.append(done)
-        setInterval(() => {
-          done.remove()
-          e.target.reset()
-        }, 1500)
-      }
+  document.forms.feedback.addEventListener('change', (e) => {
+    if(e.target.closest('input[type="email"]')) {
+        var bannedEmails = ['@mail.ru', '@yandex.ru', '@rambler.ru', '@rudiplomust.com']
+        for (const item of bannedEmails) {
+            if (e.target.value.endsWith(item)) {
+                alert('Email domain ' + item + ' is not allowed.')
+                document.forms.feedback.reset()
+            }
+        }
     }
+  })
+  document.forms.feedback.addEventListener('submit', (e) => {
+      for (let field = 0; field < e.target.elements.length; field++) {
+          fadeIn(e.target.getElementsByTagName('label')[field], 3000, 300)
+          fadeIn(e.target.elements[field], 3000, 300)
+          if (field == e.target.elements.length - 1) {
+              var done = document.createElement('p')
+              done.innerHTML = '&#9989; Got your feedback'
+              done.style.cssText = 'color:#FBEC13;font-family:\'Montserrat\',sans-serif;font-weight: 500; text-align:center;text-transform:uppercase;position:absolute;top:45%;left:50%;width:100%;translate:-50%;z-index:999'
+              e.target.append(done)
+              setInterval(() => {
+                  done.remove()
+                  e.target.reset()
+              }, 1500)
+          }
+      }
   })
 }
