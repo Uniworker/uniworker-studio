@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <tbody>
                 ${(() => {
             let tableRows = '';
-            for (let i = 0; i < video.serviceUK.length; i++) {
-              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceUK[i]}</td><td>${video.priceUK[i]}</td></tr>`;
+            for (let i = 0; i < editing.serviceUK.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${editing.serviceUK[i]}</td><td>${editing.priceUK[i]}</td></tr>`;
             }
             return tableRows;
           })()}
@@ -252,8 +252,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <tbody>
                 ${(() => {
             let tableRows = '';
-            for (let i = 0; i < video.serviceUK.length; i++) {
-              tableRows += `<tr><td>${i + 1}</td><td>${video.serviceUK[i]}</td><td>${video.priceUK[i]}</td></tr>`;
+            for (let i = 0; i < webdev.serviceUK.length; i++) {
+              tableRows += `<tr><td>${i + 1}</td><td>${webdev.serviceUK[i]}</td><td>${webdev.priceUK[i]}</td></tr>`;
             }
             return tableRows;
           })()}
