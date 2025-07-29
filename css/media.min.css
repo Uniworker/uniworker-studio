@@ -52,19 +52,16 @@
     margin-bottom: 0;
   }
   .howto__block:nth-child(1) .howto__image img {
-    -webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
   }
   .howto__block:nth-child(2) {
     flex-direction: row-reverse;
   }
   .howto__block:nth-child(2) .howto__image img {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
   }
   .howto__block:nth-child(3) .howto__image img {
-    -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
   }
   .howto__image {
     margin: 0;

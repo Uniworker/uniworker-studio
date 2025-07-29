@@ -162,8 +162,7 @@ textarea {
   background-image: -webkit-image-set(url("../bg/background.webp") type("image/webp") 1x, url("../bg/background@2x.webp") type("image/webp") 2x, url("../bg/background.jpg") type("image/jpg") 1x, url("../bg/background@2x.jpg") type("image/jpg") 2x);
   background-image: image-set(url("../bg/background.webp") type("image/webp") 1x, url("../bg/background@2x.webp") type("image/webp") 2x, url("../bg/background.jpg") type("image/jpg") 1x, url("../bg/background@2x.jpg") type("image/jpg") 2x);
   background-size: cover;
-  -webkit-clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
-          clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
+  clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
   overflow: hidden;
 }
 .header__top {
@@ -410,7 +409,7 @@ textarea {
 }
 .service__image::before {
   content: "";
-  background-color: #505050;
+  background-color: #ddd123; /*#505050;*/
   border-radius: 50%;
   display: block;
   height: 100%;
@@ -447,12 +446,10 @@ textarea {
   margin-bottom: 2em;
 }
 .howto__block:nth-child(odd) .howto__image img {
-  -webkit-clip-path: polygon(0 0, 100% 5%, 100% 50%, 100% 100%, 0 95%, 0% 50%);
-          clip-path: polygon(0 0, 100% 5%, 100% 50%, 100% 100%, 0 95%, 0% 50%);
+  clip-path: polygon(0 0, 100% 5%, 100% 50%, 100% 100%, 0 95%, 0% 50%);
 }
 .howto__block:nth-child(even) .howto__image img {
-  -webkit-clip-path: polygon(0 5%, 100% 0, 100% 50%, 100% 95%, 0 100%, 0% 50%);
-          clip-path: polygon(0 5%, 100% 0, 100% 50%, 100% 95%, 0 100%, 0% 50%);
+  clip-path: polygon(0 5%, 100% 0, 100% 50%, 100% 95%, 0 100%, 0% 50%);
 }
 .howto__image {
   padding: 0;
@@ -797,7 +794,7 @@ textarea {
 .contacts__form textarea::placeholder {
   color: #797979;
 }
-.contacts__form input:required:not(:-moz-placeholder-shown):invalid {
+.contacts__form input:required:not(:-moz-placeholder):invalid {
   border-color: #DF3D29;
 }
 .contacts__form input:required:not(:placeholder-shown):invalid {
